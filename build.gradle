@@ -1,0 +1,138 @@
+buildscript {
+    configurations.maybeCreate('pitest')
+    repositories {
+        mavenCentral()
+        maven {
+            url 'https://plugins.gradle.org/m2/'
+        }
+    }
+    dependencies {
+        classpath 'name.remal:gradle-plugins:1.0.178'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8'
+        classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.8'
+        pitest 'org.pitest:pitest-junit5-plugin:0.12'
+    }
+}
+
+plugins {
+    id 'com.github.ben-manes.versions' version '0.28.0'
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}
+
+ext {
+    cucumberVersion = '5.6.0'
+    junitVersion = '4.13'
+    junitJupiterVersion = '5.6.1'
+    junitPlatformVersion = '1.6.1'
+    lombokVersion = '1.18.12'
+}
+
+subprojects {
+    version '0.0.1-SNAPSHOT'
+}
+
+configure(subprojects) {
+    apply plugin: 'java'
+    apply plugin: 'checkstyle'
+    apply plugin: 'pmd'
+    apply plugin: 'jacoco'
+    apply plugin: 'name.remal.sonarlint'
+    apply plugin: 'org.sonarqube'
+    apply plugin: 'info.solidsoft.pitest'
+
+    sourceCompatibility = 13
+
+    dependencies {
+        checkstyle 'com.puppycrawl.tools:checkstyle:8.31'
+
+        annotationProcessor "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+        compileOnly "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+
+        testAnnotationProcessor "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+        testCompileOnly "org.projectlombok:lombok:$rootProject.ext.lombokVersion"
+
+        testImplementation "io.cucumber:cucumber-java:$rootProject.ext.cucumberVersion"
+        testImplementation "io.cucumber:cucumber-junit:$rootProject.ext.cucumberVersion"
+        testImplementation "io.cucumber:cucumber-junit-platform-engine:$rootProject.ext.cucumberVersion"
+        testImplementation "junit:junit:$rootProject.ext.junitVersion"
+        testImplementation "org.junit.jupiter:junit-jupiter:$rootProject.ext.junitJupiterVersion"
+        testImplementation "org.junit.jupiter:junit-jupiter-api:$rootProject.ext.junitJupiterVersion"
+        testImplementation "org.junit.jupiter:junit-jupiter-engine:$rootProject.ext.junitJupiterVersion"
+        testImplementation "org.junit.jupiter:junit-jupiter-params:$rootProject.ext.junitJupiterVersion"
+        testImplementation "org.junit.platform:junit-platform-commons:$rootProject.ext.junitPlatformVersion"
+        testImplementation "org.junit.platform:junit-platform-engine:$rootProject.ext.junitPlatformVersion"
+        testImplementation "org.junit.vintage:junit-vintage-engine:$rootProject.ext.junitJupiterVersion"
+    }
+
+    checkstyleMain {
+        configFile = file("../config/checkstyle/checkstyleMain.xml")
+        maxWarnings = 0
+    }
+
+    checkstyleTest {
+        configFile = file("../config/checkstyle/checkstyleTest.xml")
+        maxWarnings = 0
+    }
+
+    jacocoTestCoverageVerification {
+        violationRules {
+            rule {
+                limit {
+                    minimum = 1.0
+                }
+            }
+        }
+    }
+    check.dependsOn jacocoTestCoverageVerification
+
+    jacocoTestReport {
+        reports {
+            xml.enabled true
+            csv.enabled true
+            html.enabled true
+        }
+    }
+
+    pmd {
+        ruleSets = []
+        consoleOutput = true
+        dependencies {
+            pmd 'net.sourceforge.pmd:pmd:6.22.0'
+            pmd 'net.sourceforge.pmd:pmd-core:6.22.0'
+            pmd 'net.sourceforge.pmd:pmd-java:6.22.0'
+        }
+    }
+
+    pitest {
+        targetClasses = ['com.nelkinda.template.*'] // TOD change
+        pitestVersion = '1.5.1'
+        timestampedReports = false
+        testPlugin = 'junit5'
+        outputFormats = ['XML', 'HTML']
+        mutators = ['DEFAULTS', 'STRONGER', 'CONSTRUCTOR_CALLS', 'INLINE_CONSTS', 'REMOVE_CONDITIONALS', 'REMOVE_INCREMENTS', 'ROR']
+        mutationThreshold = 100
+        coverageThreshold = 100
+    }
+
+    pmdMain {
+        ruleSetFiles = files("../config/pmd/pmdMain.xml")
+    }
+
+    pmdTest {
+        ruleSetFiles = files("../config/pmd/pmdTest.xml")
+    }
+
+    test {
+        useJUnitPlatform()
+    }
+}
+
+wrapper {
+    gradleVersion '6.3'
+    distributionType = Wrapper.DistributionType.ALL
+}

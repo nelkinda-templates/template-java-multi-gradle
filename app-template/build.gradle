@@ -1,0 +1,9 @@
+plugins {
+    id 'application'
+}
+
+mainClassName = 'com.nelkinda.template.app.Main'
+
+dependencies {
+    implementation project(':lib-template')
+}

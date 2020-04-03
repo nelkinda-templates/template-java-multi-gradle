@@ -1,0 +1,4 @@
+rootProject.name = 'template-multi-gradle' // TODO Change
+
+include 'lib-template'
+include 'app-template'
