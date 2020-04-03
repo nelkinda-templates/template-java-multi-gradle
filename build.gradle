@@ -109,7 +109,7 @@ configure(subprojects) {
     }
 
     pitest {
-        targetClasses = ['com.nelkinda.template.*'] // TOD change
+        targetClasses = ['com.nelkinda.template.*'] // TODO change
         pitestVersion = '1.5.1'
         timestampedReports = false
         testPlugin = 'junit5'

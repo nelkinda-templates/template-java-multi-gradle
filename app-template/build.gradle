@@ -2,7 +2,7 @@ plugins {
     id 'application'
 }
 
-mainClassName = 'com.nelkinda.template.app.Main'
+mainClassName = 'com.nelkinda.template.app.Main' // TODO change
 
 dependencies {
     implementation project(':lib-template')
