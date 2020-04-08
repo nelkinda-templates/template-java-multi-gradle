@@ -30,6 +30,7 @@ ext {
     junitJupiterVersion = '5.6.1'
     junitPlatformVersion = '1.6.1'
     lombokVersion = '1.18.12'
+    pmdVersion = '6.22.0'
 }
 
 subprojects {
@@ -98,16 +99,6 @@ configure(subprojects) {
         }
     }
 
-    pmd {
-        ruleSets = []
-        consoleOutput = true
-        dependencies {
-            pmd 'net.sourceforge.pmd:pmd:6.22.0'
-            pmd 'net.sourceforge.pmd:pmd-core:6.22.0'
-            pmd 'net.sourceforge.pmd:pmd-java:6.22.0'
-        }
-    }
-
     pitest {
         targetClasses = ['com.nelkinda.template.*'] // TODO change
         pitestVersion = '1.5.1'
@@ -117,6 +108,16 @@ configure(subprojects) {
         mutators = ['DEFAULTS', 'STRONGER', 'CONSTRUCTOR_CALLS', 'INLINE_CONSTS', 'REMOVE_CONDITIONALS', 'REMOVE_INCREMENTS', 'ROR']
         mutationThreshold = 100
         coverageThreshold = 100
+    }
+
+    pmd {
+        ruleSets = []
+        consoleOutput = true
+        dependencies {
+            pmd "net.sourceforge.pmd:pmd:$rootProject.ext.pmdVersion"
+            pmd "net.sourceforge.pmd:pmd-core:$rootProject.ext.pmdVersion"
+            pmd "net.sourceforge.pmd:pmd-java:$rootProject.ext.pmdVersion"
+        }
     }
 
     pmdMain {
