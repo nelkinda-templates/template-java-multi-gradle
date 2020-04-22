@@ -1,6 +1,7 @@
 # template-multi-gradle
 
-![CI/CD](https://github.com/nelkinda/template-multi-gradle/workflows/CI/CD/badge.svg)
+[![GitHub CI/CD](https://github.com/nelkinda/template-multi-gradle/workflows/CI/CD/badge.svg)](https://github.com/nelkinda/template-multi-gradle/actions)
+[![Travis CI/Cd](https://travis-ci.org/nelkinda/template-multi-gradle.svg)](https://travis-ci.org/nelkinda/template-multi-gradle)
 
 Template for multi-module Java projects at Nelkinda.
 
