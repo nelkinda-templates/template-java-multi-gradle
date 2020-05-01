@@ -7,7 +7,7 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'name.remal:gradle-plugins:1.0.184'
+        classpath 'name.remal:gradle-plugins:1.0.187'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8.0.1969'
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.4.9'
         pitest 'org.pitest:pitest-junit5-plugin:0.12'
@@ -47,7 +47,7 @@ configure(subprojects) {
     apply plugin: 'org.sonarqube'
     apply plugin: 'info.solidsoft.pitest'
 
-    sourceCompatibility = 13
+    sourceCompatibility = 14
 
     dependencies {
         checkstyle 'com.puppycrawl.tools:checkstyle:8.32'
