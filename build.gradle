@@ -13,7 +13,7 @@ buildscript {
 }
 
 plugins {
-    id 'com.github.ben-manes.versions' version '0.28.0'
+    id 'name.remal.check-dependency-updates' version '1.0.191'
 }
 
 allprojects {
@@ -44,6 +44,7 @@ configure(subprojects) {
     apply plugin: 'name.remal.sonarlint'
     apply plugin: 'org.sonarqube'
     apply plugin: 'info.solidsoft.pitest'
+    apply plugin: 'name.remal.check-dependency-updates'
 
     sourceCompatibility = 14
 

@@ -32,9 +32,9 @@ clean:: $(BUILD)
 pitest: $(BUILD)
 	$(BUILD) $(BUILDFLAGS) $@
 
-.PHONY: dependencyUpdates
+.PHONY: checkDependencyUpdates
 ## Checks for dependency updates.
-dependencyUpdates: $(BUILD)
+checkDependencyUpdates: $(BUILD)
 	$(BUILD) $(BUILDFLAGS) $@
 
 .PHONY: wrapper
