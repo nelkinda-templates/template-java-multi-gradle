@@ -11,7 +11,8 @@ all: build
 .PHONY: pipeline
 ## Runs the same thing as the pipeline.
 pipeline:
-	$(BUILD) $(BUILDFLAGS) build
+	$(BUILD) $(BUILDFLAGS) checkUpdates build
+	#$(BUILD) $(BUILDFLAGS) checkUpdates build pitest
 
 .PHONY: continuous
 ## Builds and tests continuously.
@@ -32,9 +33,9 @@ clean:: $(BUILD)
 pitest: $(BUILD)
 	$(BUILD) $(BUILDFLAGS) $@
 
-.PHONY: checkDependencyUpdates
+.PHONY: checkUpdates
 ## Checks for dependency updates.
-checkDependencyUpdates: $(BUILD)
+checkUpdates: $(BUILD)
 	$(BUILD) $(BUILDFLAGS) $@
 
 .PHONY: wrapper

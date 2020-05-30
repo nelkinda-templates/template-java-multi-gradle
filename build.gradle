@@ -6,14 +6,14 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'name.remal:gradle-plugins:1.0.191'
-        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:2.8.0.1969'
+        classpath 'name.remal:gradle-plugins:1.0.192'
+        classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0'
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.1'
     }
 }
 
 plugins {
-    id 'name.remal.check-dependency-updates' version '1.0.191'
+    id 'name.remal.check-updates' version '1.0.192'
 }
 
 allprojects {
@@ -44,7 +44,7 @@ configure(subprojects) {
     apply plugin: 'name.remal.sonarlint'
     apply plugin: 'org.sonarqube'
     apply plugin: 'info.solidsoft.pitest'
-    apply plugin: 'name.remal.check-dependency-updates'
+    apply plugin: 'name.remal.check-updates'
 
     sourceCompatibility = 14
 
@@ -72,6 +72,10 @@ configure(subprojects) {
 
         pitest 'org.pitest:pitest-junit5-plugin:0.12'
         pitest 'org.pitest:pitest-command-line:1.5.2'
+    }
+
+    checkDependencyUpdates {
+        failIfUpdatesFound = true
     }
 
     checkstyleMain {
@@ -136,6 +140,10 @@ configure(subprojects) {
     test {
         useJUnitPlatform()
     }
+}
+
+checkDependencyUpdates {
+    failIfUpdatesFound = true
 }
 
 wrapper {
