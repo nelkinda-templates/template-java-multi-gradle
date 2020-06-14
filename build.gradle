@@ -23,7 +23,7 @@ allprojects {
 }
 
 ext {
-    cucumberVersion = '6.1.0'
+    cucumberVersion = '6.1.1'
     junitVersion = '4.13'
     junitJupiterVersion = '5.6.2'
     junitPlatformVersion = '1.6.2'
