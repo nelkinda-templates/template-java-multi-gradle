@@ -6,14 +6,14 @@ buildscript {
         }
     }
     dependencies {
-        classpath 'name.remal:gradle-plugins:1.0.198'
+        classpath 'name.remal:gradle-plugins:1.0.199'
         classpath 'org.sonarsource.scanner.gradle:sonarqube-gradle-plugin:3.0'
         classpath 'info.solidsoft.gradle.pitest:gradle-pitest-plugin:1.5.1'
     }
 }
 
 plugins {
-    id 'name.remal.check-updates' version '1.0.198'
+    id 'name.remal.check-updates' version '1.0.199'
 }
 
 allprojects {
