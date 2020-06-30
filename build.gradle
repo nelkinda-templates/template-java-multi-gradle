@@ -95,7 +95,7 @@ configure(subprojects) {
         testImplementation 'org.mockito:mockito-core'
 
         pitest 'org.pitest:pitest-junit5-plugin'
-        pitest 'org.pitest:pitest-command-line'
+        pitest 'org.pitest:pitest-command-line:1.5.2'
     }
 
     checkDependencyUpdates {
