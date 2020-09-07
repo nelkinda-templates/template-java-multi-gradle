@@ -99,7 +99,7 @@ configure(subprojects) {
     }
 
     checkDependencyUpdates {
-        failIfUpdatesFound = true
+        failIfUpdatesFound = false
     }
 
     checkstyleMain {
