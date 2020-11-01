@@ -29,7 +29,7 @@ subprojects {
     version '0.0.1-SNAPSHOT'
     dependencyManagement {
         dependencies {
-            dependency 'com.puppycrawl.tools:checkstyle:8.36.2'
+            dependency 'com.puppycrawl.tools:checkstyle:8.37'
             dependencySet(group: 'io.cucumber', version: '6.8.2') {
                 entry 'cucumber-java'
                 entry 'cucumber-junit'
