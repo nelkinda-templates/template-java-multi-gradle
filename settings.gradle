@@ -1,4 +1,4 @@
-rootProject.name = 'com.nelkinda.template-multi-gradle' // TODO Change
+rootProject.name = 'com.nelkinda.template-java-multi-gradle' // TODO Change
 
 include 'lib-template'
 include 'app-template'
