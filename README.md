@@ -1,28 +1,30 @@
-# template-multi-gradle
+# template-java-multi-gradle <!-- TODO change title -->
 
-[![GitHub CI/CD](https://github.com/nelkinda/template-multi-gradle/workflows/CI/CD/badge.svg)](https://github.com/nelkinda/template-multi-gradle/actions)
-[![Travis CI/Cd](https://travis-ci.org/nelkinda/template-multi-gradle.svg)](https://travis-ci.org/nelkinda/template-multi-gradle)
+<!-- TODO select and adjust badges -->
+[![GitHub CI/CD](https://github.com/nelkinda/template-java-multi-gradle/workflows/CI/CD/badge.svg)](https://github.com/nelkinda/template-java-multi-gradle/actions)
+[![Travis CI/Cd](https://travis-ci.org/nelkinda/template-java-multi-gradle.svg)](https://travis-ci.org/nelkinda/template-java-multi-gradle)
+
+<!-- TODO Replace this README -->
 
 Template for multi-module Java projects at Nelkinda.
 
 ## Features
 - `Makefile` as wrapper to make standard workflows as well as pipeline reproduction easier to access.
-  This also 
-- Extensive static code analysis to ensure the quality of certain aspects of structure using _CheckStyle_, _PMD_, and _SonarLint_
-- Extensive dynamic code analysis to ensure the quality of behavior using _JUnit 5_, _Cucumber_, _JaCoCo_, and _Pitest_
-- Tracking of analysis reports using _SonarQube_
-- Pre-configured CI/CD on: GitHub, Travis
-- Available on: GitHub, Bitbucket
+- Extensive **static code analysis** to ensure the quality of certain aspects of structure using _CheckStyle_, _PMD_, and _SonarLint_.
+- Extensive **dynamic code analysis** to ensure the quality of behavior using _JUnit 5_, _Cucumber_, _JaCoCo_, and _Pitest_.
+- Tracking of analysis reports using _SonarQube_.
+- Preconfigured CI/CD **pipelines** for _Bitbucket_, _GitHub_, _GitLab_, and _Travis_.
+- Available on: Bitbucket, GitHub, GitLab.
 
 ## How to use
 
 ### GitHub Template
-- Create a new repository based on this template: https://github.com/nelkinda/template-multi-gradle/generate
-- Open the repository in your favorite IDE, for example
+- Create a new repository based on this template: https://github.com/nelkinda/template-java-multi-gradle/generate
+- Open the repository in your favorite IDE, for example IntelliJ IDEA.
+- Look for all the TODO comments and solve them to replace placeholders, including those in this file.
 
-<!-- TODO Replace this README -->
 ## Reports
-The reports are available locally, after running a build using `make`
+The reports are available locally, after running a build using `make`.
 
 ### `app-template`
 * [Checkstyle Report Main](app-template/build/reports/checkstyle/checkstyleMain/report.html)
