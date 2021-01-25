@@ -13,7 +13,6 @@ buildscript {
 }
 
 plugins {
-    id 'name.remal.check-updates' version '1.2.2'
     id 'io.spring.dependency-management' version '1.0.11.RELEASE'
 }
 
@@ -68,7 +67,6 @@ configure(subprojects) {
     apply plugin: 'name.remal.sonarlint'
     apply plugin: 'org.sonarqube'
     apply plugin: 'info.solidsoft.pitest'
-    apply plugin: 'name.remal.check-updates'
 
     sourceCompatibility = 14
 
@@ -96,10 +94,6 @@ configure(subprojects) {
 
         pitest 'org.pitest:pitest-junit5-plugin'
         pitest 'org.pitest:pitest-command-line'
-    }
-
-    checkDependencyUpdates {
-        failIfUpdatesFound = false
     }
 
     checkstyleMain {
@@ -168,10 +162,6 @@ configure(subprojects) {
     test {
         useJUnitPlatform()
     }
-}
-
-checkDependencyUpdates {
-    failIfUpdatesFound = false // Workaround for sonarlint version issues.
 }
 
 wrapper {
