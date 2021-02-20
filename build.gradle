@@ -29,7 +29,7 @@ subprojects {
     dependencyManagement {
         dependencies {
             dependency 'com.puppycrawl.tools:checkstyle:8.39'
-            dependencySet(group: 'io.cucumber', version: '6.9.1') {
+            dependencySet(group: 'io.cucumber', version: '6.10.0') {
                 entry 'cucumber-java'
                 entry 'cucumber-junit'
                 entry 'cucumber-junit-platform-engine'
@@ -46,7 +46,7 @@ subprojects {
                 entry 'junit-jupiter-engine'
                 entry 'junit-jupiter-params'
             }
-            dependencySet(group: 'org.junit.platform', version: '1.7.0') {
+            dependencySet(group: 'org.junit.platform', version: '1.7.1') {
                 entry 'junit-platform-commons'
                 entry 'junit-platform-engine'
             }
