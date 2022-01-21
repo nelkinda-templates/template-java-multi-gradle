@@ -1,13 +1,18 @@
 package com.nelkinda.template.app.acceptance; // TODO change
 
-import io.cucumber.junit.CucumberOptions;
-import org.junit.runner.RunWith;
+import org.junit.platform.suite.api.*;
 
-@CucumberOptions(
-        features = "src/test/resources/features",
-        tags = "not(@wip) and not(@future)"
-)
-@RunWith(io.cucumber.junit.Cucumber.class)
-@io.cucumber.junit.platform.engine.Cucumber
+import static io.cucumber.junit.platform.engine.Constants.FILTER_TAGS_PROPERTY_NAME;
+
+@Suite
+@IncludeEngines("cucumber")
+@SelectClasspathResource("features")
+@ConfigurationParameters({
+        @ConfigurationParameter(
+                key = FILTER_TAGS_PROPERTY_NAME,
+                value = "not(@wip) and not(@future)"
+        ),
+})
+@SuppressWarnings("java:S2187") // false positive
 public class AcceptanceTest {
 }
