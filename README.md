@@ -1,7 +1,7 @@
 # template-java-multi-gradle <!-- TODO change title -->
 
 <!-- TODO select and adjust badges -->
-[![GitHub CI/CD](https://github.com/nelkinda/template-java-multi-gradle/workflows/CI/CD/badge.svg)](https://github.com/nelkinda/template-java-multi-gradle/actions)
+[![GitHub CI/CD](https://github.com/nelkinda-templates/template-java-multi-gradle/workflows/CI/CD/badge.svg)](https://github.com/nelkinda/template-java-multi-gradle/actions)
 [![Travis CI/Cd](https://travis-ci.org/nelkinda/template-java-multi-gradle.svg)](https://travis-ci.org/nelkinda/template-java-multi-gradle)
 
 <!-- TODO Replace this README -->
@@ -19,7 +19,7 @@ Template for multi-module Java projects at Nelkinda.
 ## How to use
 
 ### GitHub Template
-- Create a new repository based on this template: https://github.com/nelkinda/template-java-multi-gradle/generate
+- Create a new repository based on this template: https://github.com/nelkinda-templates/template-java-multi-gradle/generate
 - Open the repository in your favorite IDE, for example IntelliJ IDEA.
 - Look for all the TODO comments and solve them to replace placeholders, including those in this file.
 
