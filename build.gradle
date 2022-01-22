@@ -31,10 +31,8 @@ subprojects {
             dependency 'com.puppycrawl.tools:checkstyle:9.2.1'
             dependencySet(group: 'io.cucumber', version: '7.2.3') {
                 entry 'cucumber-java'
-                entry 'cucumber-junit'
                 entry 'cucumber-junit-platform-engine'
             }
-            dependency 'junit:junit:4.13.2'
             dependencySet(group: 'net.sourceforge.pmd', version: '6.41.0') {
                 entry 'pmd'
                 entry 'pmd-core'
@@ -54,7 +52,6 @@ subprojects {
                 entry 'junit-platform-suite-commons'
                 entry 'junit-platform-suite-engine'
             }
-            dependency 'org.junit.vintage:junit-vintage-engine:5.8.2'
             dependency 'org.mockito:mockito-core:4.2.0'
             dependency 'org.pitest:pitest-junit5-plugin:0.15'
             dependency 'org.pitest:pitest-command-line:1.7.3'
@@ -84,9 +81,7 @@ configure(subprojects) {
         testCompileOnly 'org.projectlombok:lombok'
 
         testImplementation 'io.cucumber:cucumber-java'
-        testImplementation 'io.cucumber:cucumber-junit'
         testImplementation 'io.cucumber:cucumber-junit-platform-engine'
-        testImplementation 'junit:junit'
         testImplementation 'org.junit.jupiter:junit-jupiter'
         testImplementation 'org.junit.jupiter:junit-jupiter-api'
         testImplementation 'org.junit.jupiter:junit-jupiter-engine'
@@ -96,7 +91,6 @@ configure(subprojects) {
         testImplementation 'org.junit.platform:junit-platform-suite-api'
         testImplementation 'org.junit.platform:junit-platform-suite-commons'
         testImplementation 'org.junit.platform:junit-platform-suite-engine'
-        testImplementation 'org.junit.vintage:junit-vintage-engine'
         testImplementation 'org.mockito:mockito-core'
 
         pitest 'org.pitest:pitest-junit5-plugin'
