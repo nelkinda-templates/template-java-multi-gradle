@@ -33,7 +33,7 @@ subprojects {
                 entry 'cucumber-java'
                 entry 'cucumber-junit-platform-engine'
             }
-            dependencySet(group: 'net.sourceforge.pmd', version: '6.42.0') {
+            dependencySet(group: 'net.sourceforge.pmd', version: '6.43.0') {
                 entry 'pmd'
                 entry 'pmd-core'
                 entry 'pmd-java'
