@@ -69,7 +69,7 @@ configure(subprojects) {
     apply plugin: 'org.sonarqube'
     apply plugin: 'info.solidsoft.pitest'
 
-    sourceCompatibility = 17
+    sourceCompatibility = 18
 
     dependencies {
         checkstyle 'com.puppycrawl.tools:checkstyle'
