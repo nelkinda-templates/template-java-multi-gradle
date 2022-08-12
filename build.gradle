@@ -108,7 +108,7 @@ configure(subprojects) {
     }
 
     jacoco {
-        toolVersion = "0.8.7"
+        toolVersion = "0.8.8"
     }
 
     jacocoTestCoverageVerification {
@@ -166,6 +166,6 @@ configure(subprojects) {
 }
 
 wrapper {
-    gradleVersion '7.4'
+    gradleVersion '7.5.1'
     distributionType = Wrapper.DistributionType.ALL
 }
